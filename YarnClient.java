@@ -1,3 +1,8 @@
+/*
+ * author Neeraj Goswamy
+ * Desc hadoop-2.0.2-alpha Yarn Client
+ */
+
 import java.util.*;
 import java.net.URI;
 import java.net.InetSocketAddress;
@@ -64,10 +69,6 @@ try{
  
     amJarRsrc.setTimestamp(jarStatus.getModificationTime());
     amJarRsrc.setSize(jarStatus.getLen());
-    // The framework will create a symlink called AppMaster.jar in the 
-    // working directory that will be linked back to the actual file. 
-    // The ApplicationMaster, if needs to reference the jar file, would 
-    // need to use the symlink filename.  
     localResources.put("tmp.jar",  amJarRsrc);    
     // Set the local resources into the launch context    
     amContainer.setLocalResources(localResources);
